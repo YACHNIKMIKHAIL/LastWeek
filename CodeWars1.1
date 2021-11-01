@@ -1,0 +1,64 @@
+1. Opposites Attract
+Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. 
+If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
+Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
+
+function lovefunc(flower1, flower2){
+  if(flower1 % 2 === 0 && flower2 % 2 === 0 || flower1 % 2 !== 0 && flower2 % 2 !== 0){
+    return false;
+  }else{
+    return true;
+  }
+}
+
+
+2. Twice as old
+Your function takes two arguments:
+current father's age (years)
+current age of his son (years)
+Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old).
+
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  let s=sonYearsOld*2-dadYearsOld;
+  if (s>0){
+ return s;
+}else{
+  return s*-1
+}
+  }
+  
+  
+ 3. Array plus array
+  I'm new to coding and now I want to get the sum of two arrays...actually the sum of all their elements. I'll appreciate for your help.
+P.S. Each array includes only integer numbers. Output is a number too.
+
+function arrayPlusArray(arr1, arr2) {
+ let arr = arr1.concat(arr2)
+  let s=0;
+   for (i = 0; i < arr.length; i++){
+      s=s+ arr[i];
+   }
+   return s;
+}
+
+
+4. Third Angle of a Triangle
+You are given two interior angles (in degrees) of a triangle.
+Write a function to return the 3rd.
+Note: only positive integers will be tested.
+
+function otherAngle(a, b) {
+  return 180-a-b;
+}
+
+
+5. Even or Odd
+Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+function even_or_odd(number) {
+  if(number % 2 !== 0){
+    return "Odd";
+  }else{
+    return "Even";
+  }
+}
