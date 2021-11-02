@@ -1,0 +1,140 @@
+1. Grasshopper - Messi Goals
+Messi's Goal Total
+Use variables to find the sum of the goals Messi scored in 3 competitions
+
+var laLigaGoals=43;
+var championsLeagueGoals=10;
+var copaDelReyGoals=5;
+
+var totalGoals=laLigaGoals+championsLeagueGoals+copaDelReyGoals;
+
+
+2. String repeat
+Write a function called repeatStr which repeats the given string string exactly n times.
+
+function repeatStr (n, s) {
+  let newString = ''
+    while(n > 0) {
+        newString += s
+        n--
+    }
+    return newString
+}
+
+
+3. Is it even?
+In this Kata we are passing a number (n) into a function.
+Your code will determine if the number passed is even (or not).
+The function needs to return either a true or false.
+Numbers may be positive or negative, integers or floats.
+Floats are considered UNeven for this kata.
+
+function testEven(n) {
+    if(n%2==0){
+      return true;
+    }else{
+      return false;
+    }
+}
+
+
+4. Grasshopper - Terminal game move function
+erminal game move function
+In this game, the hero moves from left to right. The player rolls the die and moves the number of spaces indicated by the die two times.
+Create a function for the terminal game that takes the current position of the hero and the roll (1-6) and return the new position.
+
+function move (position, roll) {
+  return roll*2+position;
+}
+
+
+5. What's the real floor?
+Americans are odd people: in their buildings, the first floor is actually the ground floor and there is no 13th floor (due to superstition).
+Write a function that given a floor in the american system returns the floor in the european system.
+With the 1st floor being replaced by the ground floor and the 13th floor being removed, the numbers move down to take their place. 
+In case of above 13, they move down by two because there are two omitted numbers below them.
+Basements (negatives) stay the same as the universal level.
+
+function getRealFloor(n) {
+  if(n<=0){
+    return n;
+  }else if(n>0&&n<13){
+    return n-1;
+  }else if(n>=13){
+    return n-2;
+  }
+}
+
+6. Reverse List Order
+In this kata you will create a function that takes in a list and returns a list with the reverse order.
+
+function reverseList(list) {
+return list.reverse()
+}
+
+
+7. You only need one - Beginner
+You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+Array can contain numbers or strings. X can be either.
+Return true if the array contains the value, false if not.
+
+function check(a, x) {
+  if(a.includes(x)){
+    return true;
+  }
+  return false;
+}
+
+
+8. Transportation on vacation
+After a hard quarter in the office you decide to get some rest on a vacation. So you will book a flight for you and 
+your girlfriend and try to leave all the mess behind you.
+You will need a rental car in order for you to get around in your vacation. The manager of the car rental makes you some good offers.
+Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, 
+you get $20 off your total.
+Write a code that gives out the total amount for different days(d).
+
+
+function rentalCarCost(d) {
+  if(d>=7){
+    return 40*d-50;
+  }else if(d>=3){
+    return d*40-20;
+  }else{
+    return d*40;
+  }
+}
+
+
+9. Reversed sequence
+Build a function that returns an array of integers from n to 1 where n>0.
+Example : n=5 --> [5,4,3,2,1]
+
+const reverseSeq = n => {
+  let res=[];
+  for(i=n;i>0;i--){
+    res.push(i)
+  }
+  return res;
+};
+
+
+10. Expressions Matter
+Task
+Given three integers a ,b ,c, return the largest number obtained after inserting the following operators and brackets: +, *, ()
+In other words , try every combination of a,b,c with [*+()] , and return the Maximum Obtained
+
+function expressionMatter(a, b, c) {
+  const results = [];
+  results[0] = a * (b + c);
+  results[1] = a * b * c;
+  results[2] = a * b + c;
+  results[3] = a + b * c;
+  results[4] = (a + b) * c;
+  results[5] = a + b + c;
+  return Math.max(...results);
+}
+
+
+
+
