@@ -1,0 +1,90 @@
+1.Invert values
+Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+
+function invert(array) {
+   return array.map((e) => -e);
+}
+
+
+2.Convert a Boolean to a String
+Implement a function which convert the given boolean value into its string representation.
+Note: Only valid inputs will be given.
+
+function booleanToString(b){
+  return b.toString();
+}
+
+
+3.Basic variable assignment
+This code should store "codewa.rs" as a variable called name but it's not working. Can you figure out why?
+
+var a = "code";
+var b = "wa.rs";
+var name = a + b;
+
+
+4.Convert a String to a Number!
+We need a function that can transform a string into a number. What ways of achieving this do you know?
+Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral number.
+
+var stringToNumber = function(str){
+  return Number(str);
+  return null;
+}
+
+
+5.Grasshopper - Variable Assignment Debug
+Fix the variables assigments so that this code stores the string 'devLab' in the variable name.
+
+var a = "dev"
+var b = "Lab"
+
+var name = a + b
+
+
+6.Grasshopper - Basic Function Fixer
+Fix the function
+I created this function to add five to any number that was passed in to it and return the new value. It doesn't throw any errors but it returns the wrong number.
+
+function addFive(num) {
+  var total = num + 5
+  return total
+}
+
+
+7.Convert number to reversed array of digits
+Convert number to reversed array of digits
+Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+
+function digitize(n) {
+  return String(n).split('').map(Number).reverse()
+}
+
+
+8.Grasshopper - Personalized Message
+Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+
+function greet (name, owner) {
+  if(name==owner){
+    return 'Hello boss'
+  }else{
+    return 'Hello guest'
+  }
+}
+
+
+9.You Can't Code Under Pressure #1
+Code as fast as you can! You need to double the integer and return it.
+
+function doubleInteger(i) {
+  
+  return i*2;
+}
+
+
+10.Remove exclamation marks
+Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+
+function removeExclamationMarks(s) {
+  return s.replace(/!/g, '')
+}
