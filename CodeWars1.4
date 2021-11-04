@@ -1,0 +1,105 @@
+1.Sum of positive
+You get an array of numbers, return the sum of all of the positives ones.
+Example [1,-4,7,12] => 1 + 7 + 12 = 20
+
+function positiveSum(arr) {
+  let answ=0;
+  for(let i=0; i<arr.length; i++){
+    if(arr[i]>0){
+      answ+=arr[i];
+    }
+    }
+    return answ;
+  }
+  
+
+
+
+2.Basic Mathematical Operations
+Your task is to create a function that does four basic mathematical operations.
+The function should take three arguments - operation(string/char), value1(number), value2(number).
+The function should return result of numbers after applying the chosen operation.
+
+function basicOp(operation, value1, value2)
+{
+  if(operation=='+'){
+    return value1+value2;
+  }else if(operation=='-'){
+    return value1-value2;
+  }else if(operation=='*'){
+    return value1*value2;
+  }else(operation=='/')
+    return value1/value2;
+}
+
+
+
+
+3.Find Maximum and Minimum Values of a List
+Your task is to make two functions, max and min (maximum and minimum in PHP and Python, maxi and mini in Julia) 
+that take a(n) array/vector of integers list as input and outputs, respectively, the largest and lowest number in that array/vector.
+
+var min = function(list){
+return Math.min(...list);
+}
+var max = function(list){
+return Math.max(...list);
+}
+
+
+
+
+4.Beginner Series #1 School Paperwork
+Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+
+function paperwork(n, m) {
+  if(n>0&&m>0){
+    return n*m;
+  }else{
+    return 0;
+  }
+}
+
+
+
+
+
+5.Century From Year
+ntroduction
+The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
+Task
+Given a year, return the century it is in.
+
+function century(year) {
+   let v = 0;
+  while (year > 0){
+    year = year - 100;
+    v = v + 1;
+  }
+  return v;
+}
+
+
+
+
+6.Reversed Words
+Complete the solution so that it reverses all of the words within the string passed in.
+
+function reverseWords(str){
+  return str.split(' ').reverse().join(' ');
+}
+
+
+
+
+7.Grasshopper - Summation
+Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+
+var summation = function (num) {
+  let s=0;
+  for(let i=0; i<=num; i++){
+    s+=i
+  }
+  return s;
+}
