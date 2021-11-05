@@ -1,0 +1,189 @@
+1.Volume of a Cuboid
+Bob needs a fast way to calculate the volume of a cuboid with three values: length, width and the height of the cuboid. 
+Write a function to help Bob with this calculation.
+
+class Kata {
+  static getVolumeOfCuboid(length, width, height) {
+    return length*width*height;
+  }
+}
+
+
+
+
+2.Will there be enough space?
+The Story:
+Bob is working as a bus driver. However, he has become extremely popular amongst the city's residents. 
+With so many passengers wanting to get aboard his bus, he sometimes has to face the problem of not enough space left on the bus! 
+He wants you to write a simple program telling him if he will be able to fit all the passengers.
+Task Overview:
+You have to write a function that accepts three parameters:
+cap is the amount of people the bus can hold excluding the driver.
+on is the number of people on the bus excluding the driver.
+wait is the number of people waiting to get on to the bus excluding the driver.
+If there is enough space, return 0, and if there isn't, return the number of passengers he can't take.
+
+function enough(cap, on, wait) {
+  let dif = Math.abs((cap - on)-wait)
+
+return (on + wait < cap) ? 0: dif
+}
+
+
+
+
+3.Grasshopper - Messi goals function
+Messi is a soccer player with goals in three leagues:
+LaLiga
+Copa del Rey
+Champions
+Complete the function to return his total number of goals in all three leagues.
+Note: the input will always be valid.
+
+function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+  return laLigaGoals+copaDelReyGoals+championsLeagueGoals;
+}
+
+
+
+
+4.Find the smallest integer in the array
+Given an array of integers your solution should find the smallest integer.
+For example:
+Given [34, 15, 88, 2] your solution will return 2
+Given [34, -345, -1, 100] your solution will return -345
+You can assume, for the purpose of this kata, that the supplied array will not be empty.
+
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    return Math.min(...args);
+  }
+}
+
+
+
+
+5.Double Char
+Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+doubleChar("String") ==> "SSttrriinngg"
+
+function doubleChar(str) {
+  var string = "";
+  for( i = 0; i < str.length; i++) {
+    string += str[i] + str[i];
+  }
+  return string;
+}
+
+
+
+
+
+6.Remove First and Last Character
+It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. 
+You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
+
+function removeChar(str){
+ let z=str.split('');
+  z.pop();
+  z.shift();
+return z.join('');
+};
+
+
+
+
+7.Find the Remainder
+Task
+Write a function that accepts two arguments and returns the remainder after dividing the larger number by the smaller number.
+Division by zero should return NaN. (
+
+function remainder(a, b){
+ return (a > b ? a % b : b % a)
+}
+
+
+
+
+8.Is n divisible by x and y?
+Create a function that checks if a number n is divisible by two numbers x AND y. All inputs are positive, non-zero digits.
+
+function isDivisible(n, x, y) {
+  return n % x === 0 && n % y === 0
+}
+
+
+
+
+9.Sum The Strings
+Create a function that takes 2 integers in form of a string as an input, and outputs the sum (also as a string):
+
+function sumStr(a,b) {
+  return String(Number(a)+Number(b));
+}
+
+
+
+
+10.Is there a vowel in there?
+Given an array of numbers, check if any of the numbers are the character codes for lower case vowels (a, e, i, o, u).
+If they are, change the array value to a string of that vowel.
+Return the resulting array.
+
+function isVow(a){
+ return a.map(
+    charCode =>
+      /[aeiou]/.test(String.fromCharCode(charCode))
+        ? String.fromCharCode(charCode)
+        : charCode)
+}
+
+
+
+
+11.Are You Playing Banjo?
+Create a function which answers the question "Are you playing banjo?".
+If your name starts with the letter "R" or lower case "r", you are playing banjo!
+The function takes a name as its only argument, and returns one of the following strings:
+
+function areYouPlayingBanjo(name) {
+  if (/^[rR]/.test(name))return `${name} plays banjo`;
+  return `${name} does not play banjo`;
+}
+
+
+
+
+12.Switch it Up!
+When provided with a number between 0-9, return it in words.
+Input :: 1
+Output :: "One".
+
+function switchItUp(number){
+if(number==1){
+  return "One";
+}else if(number==2){
+  return "Two";
+}else if(number==3){
+  return "Three";
+}else if(number==4){
+  return "Four";
+}else if(number==5){
+  return "Five";
+}else if(number==6){
+  return "Six";
+}else if(number==7){
+  return "Seven";
+}else if(number==8){
+  return "Eight";
+}else if(number==9){
+  return "Nine";
+}else{
+  return "Zero"
+}
+}
+
+
+
+
+13.
