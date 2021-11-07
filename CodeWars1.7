@@ -1,0 +1,89 @@
+1. Get Nth Even Number
+Return the Nth Even Number
+
+function nthEven(n){
+  return(n*2)-2; 
+}
+
+
+
+
+2. Keep Hydrated!
+Nathan loves cycling.
+Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
+You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.
+
+function litres(time) {
+  return Math.floor(time*0.5);
+}
+
+
+
+
+3. Beginner - Lost Without a Map
+Given an array of integers, return a new array with each value doubled.
+For example:
+[1, 2, 3] --> [2, 4, 6]
+
+function maps(x){
+return x.map(number=>number*2);
+}
+
+
+
+
+4. Remove First and Last Character Part Two
+This is a spin off of my first kata.
+You are given a string containing a sequence of character sequences separated by commas.
+Write a function which returns a new string containing the same character sequences except the first and the last ones but this time separated by spaces.
+If the input string is empty or the removal of the first and last items would cause the resulting string to be empty, 
+return an empty value (represented as a generic value NULL in the examples below).
+
+Examples
+"1,2,3"      =>  "2"
+"1,2,3,4"    =>  "2 3"
+"1,2,3,4,5"  =>  "2 3 4"
+""     =>  NULL
+"1"    =>  NULL
+
+function array(arr){
+return arr.split(',').slice(1,-1).join(' ')||null;
+
+}
+
+
+
+
+
+5. Did she say hallo?
+You received a whatsup message from an unknown number. Could it be from that girl/boy with a foreign accent you met yesterday evening?
+Write a simple function to check if the string contains the word hallo in different languages.
+These are the languages of the possible people you met the night before:
+
+hello - english
+ciao - italian
+salut - french
+hallo - german
+hola - spanish
+ahoj - czech republic
+czesc - polish
+Notes
+
+you can assume the input is a string.
+to keep this a beginner exercise you don't need to check if the greeting is a subset of word (Hallowen can pass the test)
+function should be case insensitive to pass the tests
+
+function validateHello(greetings) {
+  res =/(hello|ciao|salut|hallo|hola|ahoj|czesc)/i.test(greetings) ;
+  return res;
+}
+
+
+
+
+6. Hex to Decimal
+Complete the function which converts hex number (given as a string) to a decimal number.
+
+function hexToDec(hexString){
+return parseInt(hexString,16)
+}
