@@ -1,0 +1,48 @@
+1. Jenny's secret message
+Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. 
+She added a special case to her function, but she made a mistake.
+Can you help her?
+
+function greet(name){
+  if(name === "Johnny"){
+    return "Hello, my love!";
+  }
+  return "Hello, " + name + "!";
+}
+
+
+
+
+2.The Feast of Many Beasts
+All of the animals are having a feast! Each animal is bringing one dish. There is just one rule: the dish must start and end with the same 
+letters as the animal's name. For example, the great blue heron is bringing garlic naan and the chickadee is bringing chocolate cake.
+Write a function feast that takes the animal's name and dish as arguments and returns true or false to indicate whether the beast is allowed 
+to bring the dish to the feast.
+Assume that beast and dish are always lowercase strings, and that each has at least two letters. beast and dish may contain hyphens and spaces, 
+but these will not appear at the beginning or end of the string. They will not contain numerals.
+
+function feast(beast, dish) {
+if(beast[0]===dish[0]&&
+  beast[beast.length-1]===dish[dish.length-1]){
+  return true;
+}
+  return false;
+}
+
+
+
+
+3. Find Multiples of a Number
+In this simple exercise, you will build a program that takes a value, integer , and returns a list of its multiples up to another value, limit .
+If limit is a multiple of integer, it should be included as well. There will only ever be positive integers passed into the function, not consisting of 0.
+The limit will always be higher than the base.
+For example, if the parameters passed are (2, 6), the function should return [2, 4, 6] as 2, 4, and 6 are the multiples of 2 up to 6.
+If you can, try writing it in only one line of code.
+
+function findMultiples(integer, limit) {
+  const answ=[];
+  for( let i=integer; i<=limit; i+=integer){
+    answ.push(i);
+  }
+  return answ;
+}
