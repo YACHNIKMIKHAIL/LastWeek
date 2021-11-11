@@ -1,0 +1,73 @@
+1. Name Shuffler
+Write a function that returns a string in which firstname is swapped with last name.
+
+nameShuffler('john McClane'); => "McClane john"
+
+function nameShuffler(str){
+ return str.split(' ').reverse().join(' ')
+}
+
+
+
+
+2. Squash the bugs
+Simple challenge - eliminate all bugs from the supplied code so that the code runs and outputs the expected value. Output should be the length of the longest word, as a number.
+
+There will only be one 'longest' word.
+
+function findLongest(str) {
+ return Math.max(...str.split(' ').map(word=>word.length))
+}
+
+
+
+
+3. Keep up the hoop
+Alex just got a new hula hoop, he loves it but feels discouraged because his little brother is better than him
+
+Write a program where Alex can input (n) how many times the hoop goes round and it will return him an encouraging message :)
+
+If Alex gets 10 or more hoops, return the string "Great, now move on to tricks".
+If he doesn't get 10 hoops, return the string "Keep at it until you get it".
+
+function hoopCount (n) {
+   if(n>=10){
+     return "Great, now move on to tricks";
+   }   
+  return "Keep at it until you get it";
+}
+
+
+
+
+4. Difference of Volumes of Cuboids
+In this simple exercise, you will create a program that will take two lists of integers, a and b. Each list will consist of 3 positive integers above 0, 
+representing the dimensions of cuboids a and b. You must find the difference of the cuboids' volumes regardless of which is bigger.
+
+For example, if the parameters passed are ([2, 2, 3], [5, 4, 1]), the volume of a is 12 and the volume of b is 20. Therefore, the function should return 8.
+
+Your function will be tested with pre-made examples as well as random ones.
+
+function findDifference([a,b,v], [g,d,e]) {
+return Math.abs(a*b*v-g*d*e)
+}
+
+
+
+
+5. Can we divide it?
+Your task is to create functionisDivideBy (or is_divide_by) to check if an integer number is divisible by each out of two arguments.
+
+A few cases:
+
+
+(-12, 2, -6)  ->  true
+(-12, 2, -5)  ->  false
+
+(45, 1, 6)    ->  false
+(45, 5, 15)   ->  true
+
+function isDivideBy(number, a, b) {
+  return number%a===0&&number%b===0
+}
+
