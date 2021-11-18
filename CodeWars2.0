@@ -1,0 +1,83 @@
+1. Is this my tail?
+Some new animals have arrived at the zoo. The zoo keeper is concerned that perhaps the animals do not have the right tails. To help her, you must correct the broken function to make sure that the second argument (tail), is the same as the last letter of the first argument (body) - otherwise the tail wouldn't fit!
+
+If the tail is right return true, else return false.
+
+The arguments will always be strings, and normal letters.
+
+For Haskell, body has the type of String and tail has the type of Char. For Go, body has type string and tail has type rune.
+
+function correctTail(bod, tail){
+ return bod[bod.length-1]==tail
+  }
+  
+  
+  
+  
+  2. Determine offspring sex based on genes XX and XY chromosomes
+  The male gametes or sperm cells in humans and other mammals are heterogametic and contain one of two types of sex chromosomes. They are either X or Y. The female gametes or eggs however, contain only the X sex chromosome and are homogametic.
+
+The sperm cell determines the sex of an individual in this case. If a sperm cell containing an X chromosome fertilizes an egg, the resulting zygote will be XX or female. If the sperm cell contains a Y chromosome, then the resulting zygote will be XY or male.
+
+Determine if the sex of the offspring will be male or female based on the X or Y chromosome present in the male's sperm.
+
+If the sperm contains the X chromosome, return "Congratulations! You're going to have a daughter."; If the sperm contains the Y chromosome, return "Congratulations! You're going to have a son.";
+
+function chromosomeCheck(sperm) {
+  return `Congratulations! You're going to have a ${sperm==='XY'?'son.':'daughter.'}`
+}
+
+
+
+
+3. Enumerable Magic #3 - Does My List Include This?
+Create a method that accepts a list and an item, and returns true if the item belongs to the list, otherwise false.
+
+function include(arr, item){
+  if(arr.includes(item)){
+    return true
+  }else{
+    return false
+  }
+}
+
+
+
+
+4. Who ate the cookie?
+For this problem you must create a program that says who ate the last cookie. If the input is a string then "Zach" ate the cookie. If the input is a float or an int then "Monica" ate the cookie. If the input is anything else "the dog" ate the cookie. The way to return the statement is: "Who ate the last cookie? It was (name)!"
+
+Ex: Input = "hi" --> Output = "Who ate the last cookie? It was Zach! (The reason you return Zach is because the input is a string)
+
+Note: Make sure you return the correct message with correct spaces and punctuation.
+
+Please leave feedback for this kata. Cheers!
+
+function cookie(x){
+  if(typeof x=='string'){
+    return "Who ate the last cookie? It was Zach!"
+  }else if(typeof x=='number'){
+    return "Who ate the last cookie? It was Monica!"
+  }else{
+    return "Who ate the last cookie? It was the dog!"
+  }
+}
+
+
+
+
+5. Max Headroom and JavaScript style
+Shouldn't the two functions getMax1 and getMax2 be equivalent and return the same value? Can you spot a problem and
+
+function getMax1()
+{
+  var max = {name: 'Max Headroom'}
+  return max;
+}
+
+function getMax2(){
+  {
+  var max = {name: 'Max Headroom'}
+  return max;
+}
+}
