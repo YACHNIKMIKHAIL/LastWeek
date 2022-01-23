@@ -1,0 +1,66 @@
+1.Vowel remover
+Create a function called shortcut to remove the lowercase vowels (a, e, i, o, u ) in a given string.
+
+Examples
+"hello"     -->  "hll"
+"codewars"  -->  "cdwrs"
+"goodbye"   -->  "gdby"
+"HELLO"     -->  "HELLO"
+
+function shortcut (string) {
+  return string.replace(/[aeiou]/g,'')
+}
+
+
+
+
+2.Pirates!! Are the Cannons ready!??
+If they aren't ready: Shiver me timbers!
+
+Your gunners for each test case are 4 or less.
+
+When you check if they are ready their answers are in a dictionary and will either be: aye or nay
+
+Firing with less than all gunners ready is non-optimum (this is not fire at will, this is fire by the captain's orders or walk the plank, dirty sea-dog!)
+
+If all answers are 'aye' then Fire! if one or more are 'nay' then Shiver me timbers!
+
+
+
+const cannonsReady = (gunners) => {
+return  Object.values(gunners).every(response => response === 'aye')
+    ? 'Fire!'
+    : 'Shiver me timbers!'
+}
+
+
+
+
+3.get character from ASCII Value
+Write a function get_char() / getChar() which takes a number and returns the corresponding ASCII char for that value.
+
+Example:
+
+get_char(65)
+should return:
+
+'A'
+
+function getChar(c){
+  return String.fromCharCode(c)
+}
+
+
+
+
+4.Points of Reflection
+"Point reflection" or "point symmetry" is a basic concept in geometry where a given point, P, at a given position relative to a mid-point, 
+Q has a corresponding point, P1, which is the same distance from Q but in the opposite direction.
+
+Task
+Given two points P and Q, output the symmetric point of point P about Q. Each argument is a two-element array of integers representing the point's 
+X and Y coordinates. Output should be in the same format, giving the X and Y coordinates of point P1. You do not have to validate the input.
+
+function symmetricPoint([a, b], [c, d]) {
+  return  [c * 2 - a, d * 2 - b]
+}
