@@ -1,0 +1,86 @@
+1.Heads and Legs
+Everybody has probably heard of the animal heads and legs problem from the earlier years at school. It goes:
+
+“A farm contains chickens and cows. There are x heads and y legs. How many chickens and cows are there?”
+
+Where x <= 1000 and y <=1000
+
+#Task
+
+Assuming there are no other types of animals, work out how many of each animal are there.
+
+Return a tuple in Python - (chickens, cows) and an array list - [chickens, cows]/{chickens, cows} in all other languages
+
+If either the heads & legs is negative, the result of your calculation is negative or the calculation is a float return "No solutions" (no valid cases), or [-1, -1] in COBOL.
+
+In the form:
+
+[Heads, Legs] = [72, 200]
+
+VALID - [72, 200] =>             [44 , 28]   
+                             [Chickens, Cows]
+                             
+                             
+                             const isNatural = animal => animal >= 0 && Number.isInteger(animal)
+const animals = (heads, legs) => {
+  const cows = legs / 2 - heads
+  const chickens = heads - cows
+
+  return isNatural(chickens) && isNatural(cows)
+    ? [chickens, cows]
+    : 'No solutions'
+}
+
+
+
+
+2.Sentence Smash
+Sentence Smash
+Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+
+Example
+['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+
+
+function smash (words) {
+  
+    return words.join(' ');
+};
+
+
+
+
+
+3.Count Odd Numbers below n
+Given a number n, return the number of positive odd numbers below n, EASY!
+
+oddCount(7) //=> 3, i.e [1, 3, 5]
+oddCount(15) //=> 7, i.e [1, 3, 5, 7, 9, 11, 13]
+
+
+function oddCount(n){
+  return Math.floor(n/2)
+}
+
+
+
+
+4.Semi-Optional
+
+We have implemented a function wrap(value) that takes a value of arbitrary type and wraps it in a new JavaScript Object or Python Dict setting the 'value' key on the new Object or Dict to the passed-in value.
+
+So, for example, if we execute the following code:
+
+wrapper_obj = wrap("my_wrapped_string"); 
+ # wrapper_obj should be  {"value":"my_wrapped_string"}
+We would then expect the following statement to be true:
+
+wrapper_obj["value"] == "my_wrapped_string"
+Unfortunately, the code is not working as designed. Please fix the code so that it behaves as specified.
+
+
+
+
+function wrap(value) {
+  return ({value});
+}
