@@ -1,0 +1,520 @@
+1.Opposite number
+
+function opposite(number) {
+  return(-number);
+}
+
+
+2.Basic Mathematical Operations
+
+function basicOp(operation, value1, value2){
+  return eval(value1+operation+value2);
+}
+
+
+3.Printing Array elements with Comma delimiters
+
+function printArray(array){
+  return array.join();
+}
+
+
+4.Can Santa save Christmas?
+
+function determineTime (durations) {
+  let hours = 0;
+  let min = 0;
+  let sec = 0;
+  durations.map(v =>
+    v
+      .split(":")
+      .map((v, i) =>
+        i === 0 ? (hours += v * 1) : i === 1 ? (min += v * 1) : (sec += v * 1)
+      )
+  );
+  min += sec / 60;
+  hours += min / 60;
+  return hours <= 24;
+}
+
+
+5.Get the Middle Character
+
+function getMiddle(s){
+    if (s.length % 2 === 0) {
+    return s.slice(s.length / 2 - 1, s.length / 2 + 1);
+  }
+  if (s.length % 2 !== 0) {
+    return s.slice(s.length / 2, s.length / 2 + 1);
+  }
+}
+
+
+6.Singleton Pattern
+
+var Singleton = function() {
+  if (Singleton.__instance) {
+    return Singleton.__instance;
+  }
+ Singleton.__instance = this;
+};
+
+
+7.Remove First and Last Character Part Two
+
+function array(arr){
+return arr.split(',').slice(1,-1).join(' ')|| null
+}
+
+
+8.Prefill an Array
+
+function prefill(n, v) {
+    if (parseInt(n) !== Math.abs(n)) throw new TypeError(`${n} is invalid`);
+  return +n ? Array(n).fill(v) : [];
+}
+
+
+9.Cross Product of Vectors
+
+function crossProduct (vector1, vector2) {
+    if (!(vector1 instanceof Array) 
+        || !(vector2 instanceof Array) 
+        || vector1.length !== 3 
+        || vector2.length!==3) {
+    throw "Arguments are not 3D vectors!"
+  }
+
+  return [(vector1[1]*vector2[2] - vector2[1]*vector1[2]), 
+          (vector1[2]*vector2[0] - vector2[2]*vector1[0]), 
+          (vector1[0]*vector2[1] - vector2[0]*vector1[1])]
+}
+
+
+10.Matrix Transpose
+
+function transpose(matrix) {
+let arr = [];
+  for (let i = 0; i < matrix[0].slice().length; i++) {
+    let tempArr = [];
+    for (let j = 0; j < matrix.slice().length; j++) {
+      tempArr.push(matrix[j][i]);
+    }
+    arr.push(tempArr);
+  }
+  return arr;
+}
+
+
+11.Create Phone Number
+
+function createPhoneNumber(numbers){
+    let f=[]
+    let s=[]
+    let t=[]
+    for (let i = 0; i < numbers.length; i++){
+        if(i <= 2){
+            f.push(numbers[i])
+        }
+        if(i > 2 && i < 6){
+            s.push(numbers[i])
+        }
+        if(i >= 6){
+            t.push(numbers[i])
+        }
+    }
+   return (`(${f.join('')}) ${s.join('')}-${t.join('')}`)
+}
+
+
+12.Closures and Scopes
+
+function createFunctions(n) {
+   var callbacks = [];
+
+  for (let i = 0; i < n; i++) {
+    callbacks.push(function() {
+      return i;
+    });
+  }
+
+  return callbacks;
+}
+
+
+13.Calculating with Functions
+
+function zero(func) {
+  return func ? func(0) : 0;
+}
+function one(func) {
+  return func ? func(1) : 1;
+}
+function two(func) {
+  return func ? func(2) : 2;
+}
+function three(func) {
+  return func ? func(3) : 3;
+}
+function four(func) {
+  return func ? func(4) : 4;
+}
+function five(func) {
+  return func ? func(5) : 5;
+}
+function six(func) {
+  return func ? func(6) : 6;
+}
+function seven(func) {
+  return func ? func(7) : 7;
+}
+function eight(func) {
+  return func ? func(8) : 8;
+}
+function nine(func) {
+  return func ? func(9) : 9;
+}
+
+function plus(b) {
+  return function(a) {
+    return a + b;
+  };
+}
+function minus(b) {
+  return function(a) {
+    return a - b;
+  };
+}
+function times(b) {
+  return function(a) {
+    return a * b;
+  };
+}
+function dividedBy(b) {
+  return function(a) {
+    return Math.floor(a / b);
+  };
+}
+
+
+
+14.Can you keep a secret?
+
+function createSecretHolder(secret) {
+return {
+    getSecret: function() {
+      return secret;
+    },
+    setSecret: function(s) {
+      secret = s;
+    }
+  };
+}
+
+
+15.Using closures to share class state
+
+var Cat = (function () {
+    const cats = [];
+    return class Cat {
+        constructor(name, weight) {
+            if (!name || !weight) throw Error();
+            Object.defineProperty(this, "weight", {
+                get: () => this._weight,
+                set: (v) => (this._weight = v)
+            })
+
+            this.name = name;
+            this.weight = weight;
+            cats.push(this);
+        }
+
+        static averageWeight() {
+            return cats.map(v => v.weight).reduce((a, b) => a + b,0) / cats.length;
+        }
+    }
+}());
+
+
+16.A Chain adding function
+
+function add(n){
+  const f = x => add(n + x);
+  f.valueOf = () => n;
+  return f;
+}
+
+
+17.Function Cache
+
+function cache(func) {
+  const cachedResults = {};
+  return (...args) => {
+    const key = JSON.stringify(args);
+
+    if (!(key in cachedResults)) {
+      const result = func.apply(null, args);
+      cachedResults[key] = result;
+    }
+
+    return cachedResults[key];
+  };
+}
+
+
+18.Counting Duplicates
+
+function duplicateCount(text){
+   return (
+    text
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join("")
+      .match(/([^])\1+/g) || []
+  ).length;
+}
+
+
+19.Function composition
+
+const compose = (...fns) => arg => fns.reduceRight((res, fn) => fn(res), arg);
+
+
+20.Stringing me along
+
+function createMessage(str) {
+ return str1 => {
+    if (str1 === undefined) return str;
+    return createMessage(str + " " + str1);
+  };
+}
+
+
+21.I Spy
+
+function spyOn (func) {
+ let callCount = 0;
+  const calledWith = [];
+  const returnVals = [];
+  function spy (...args) {
+    const returnVal = func(...args);
+    callCount++;
+    calledWith.push(...args);
+    returnVals.push(returnVal);
+    return returnVal;
+  }
+  spy.callCount = function () {
+    return callCount;
+  };
+  spy.wasCalledWith = function (val) {
+    return calledWith.includes(val);
+  };
+  spy.returned = function (val) {
+    return returnVals.includes(val);
+  };
+  return spy;
+}
+
+
+22.Calculating with Functions
+
+function zero(func) {
+  return func ? func(0) : 0;
+}
+function one(func) {
+  return func ? func(1) : 1;
+}
+function two(func) {
+  return func ? func(2) : 2;
+}
+function three(func) {
+  return func ? func(3) : 3;
+}
+function four(func) {
+  return func ? func(4) : 4;
+}
+function five(func) {
+  return func ? func(5) : 5;
+}
+function six(func) {
+  return func ? func(6) : 6;
+}
+function seven(func) {
+  return func ? func(7) : 7;
+}
+function eight(func) {
+  return func ? func(8) : 8;
+}
+function nine(func) {
+  return func ? func(9) : 9;
+}
+
+function plus(b) {
+  return function(a) {
+    return a + b;
+  };
+}
+function minus(b) {
+  return function(a) {
+    return a - b;
+  };
+}
+function times(b) {
+  return function(a) {
+    return a * b;
+  };
+}
+function dividedBy(b) {
+  return function(a) {
+    return Math.floor(a / b);
+  };
+}
+
+
+23.SantaClausable Interface
+
+function isSantaClausable(obj) {
+  return ["sayHoHoHo", "distributeGifts", "goDownTheChimney"].every(function(
+    methodName
+  ) {
+    return typeof obj[methodName] == "function";
+  });
+}
+
+
+24.new with apply
+
+function construct(Class,...args) {
+  return new Class(...args);
+}
+
+
+25.Extract Nested Object Reference
+
+Object.prototype.hash = function(string) {
+    try {
+    return eval(`this.${string}`);
+  } catch (e) {
+    return undefined;
+  }
+}
+
+
+26.Array Helpers
+
+Array.prototype.square = function() {
+  return this.map(v => v * v);
+};
+Array.prototype.cube = function() {
+  return this.map(v => v * v * v);
+};
+Array.prototype.sum = function() {
+  return this.reduce((a, b) => a + b, 0);
+};
+Array.prototype.average = function() {
+  return this.reduce((a, b) => a + b, 0) / this.length;
+};
+Array.prototype.even = function() {
+  return this.filter(v => v % 2 == 0);
+};
+Array.prototype.odd = function() {
+  return this.filter(v => v % 2 !== 0);
+};
+
+
+27.Your order, please
+
+function order(words){
+  return words.split(' ')
+        .sort((a, b) => {
+            return a.split('')
+                .filter((f,i)=>{
+                    if(Number(f)) return +f
+                }) - b.split('')
+                .filter((f,i)=>{
+                    if(Number(f)) return +f
+                })
+        })
+        .join(' ')
+}
+
+
+28.Sum of Digits / Digital Root
+
+function digital_root(n) {
+  return ((n - 1) % 9) + 1;
+}
+
+
+29.Fun with ES6 Classes #2 - Animals and Inheritance
+
+class Shark extends Animal {
+  constructor(name, age, status) {
+    super();
+    this.name = name;
+    this.age = age;
+    this.legs = 0;
+    this.status = status;
+    this.species = "shark";
+  }
+}
+
+class Cat extends Animal {
+  constructor(name, age, status) {
+    super();
+    this.name = name;
+    this.age = age;
+    this.status = status;
+    this.legs = 4;
+    this.species = "cat";
+  }
+  introduce() {
+    return `Hello, my name is ${this.name} and I am ${this.age} years old.  Meow meow!`;
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, age, status, master = "") {
+    super();
+    this.master = master;
+    this.name = name;
+    this.age = age;
+    this.status = status;
+    this.legs = 4;
+    this.species = "dog";
+  }
+  introduce() {
+    return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+  }
+  greetMaster() {
+    return `Hello ${this.master}`;
+  }
+}
+
+
+30.Fun with ES6 Classes #3 - Cuboids, Cubes and Getters
+
+class Cuboid {
+  constructor(length, width, height) {
+    this.length = length;
+    this.width = width;
+    this.height = height;
+  }
+  get volume() {
+    return this.length * this.width * this.height;
+  }
+  get surfaceArea() {
+    return (
+      2 *
+      (this.length * this.width +
+        this.width * this.height +
+        this.height * this.length)
+    );
+  }
+}
+class Cube extends Cuboid {
+  constructor(length) {
+    super(length, length, length);
+  }
+}
